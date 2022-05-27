@@ -1,0 +1,104 @@
+/* pages/me/me.wxss */
+
+/* 顶部用户样式 */
+.top{
+  box-shadow: 10rpx 10rpx 15rpx 10rpx #e1e1e1;
+  background-color: #42bd56;
+  border-radius:0 0 50rpx 50rpx;
+}
+
+.user-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200rpx;
+}
+
+.user-photo {
+  margin: 0 auto;
+}
+
+.user-photo image{
+  border: 10rpx solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
+  height: 130rpx;
+  width: 130rpx;
+}
+
+.user-name{
+  margin: 0 auto;
+}
+
+.user-name text{
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+/* 用户信息栏 */
+.user-detail{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 30rpx;
+  padding-top: 10rpx;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid #fff;
+}
+
+.type-name{
+  color: rgb(244, 243, 241);
+  text-align: center;
+  font-size: 30rpx;
+
+}
+
+.type-num{
+  color: rgb(244, 243, 241);
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: 600;
+  position: relative;
+  top: -5rpx;
+}
+
+
+/* 下面 */
+.bottom{
+  margin-top: 50rpx;
+  
+}
+.bottom-content{
+  width: 95%; 
+  border-radius: 5%;
+  margin: auto;
+  background-color: rgb(253, 253, 253);
+  padding-bottom: 35rpx;
+  box-shadow: 5rpx 5rpx 10rpx 5rpx #e1e1e1;
+}
+.me-about{
+  display: flex;
+  margin: 20rpx 40rpx;
+  padding: 30rpx 0rpx;
+  justify-content: space-between;
+  border-bottom: 2rpx solid rgb(238, 238, 238);
+}
+.me-about image{
+  align-self: center;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.me-about button {
+    font-size: 32rpx;
+    font-weight: 400;
+    left: -48rpx;
+    position: relative;
+    text-align: left;
+    width: 600rpx;
+    background-color: #fff;
+}
+
+

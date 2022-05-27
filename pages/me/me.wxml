@@ -1,0 +1,65 @@
+<!--pages/me/me.wxml-->
+<!-- 我的相关内容 -->
+<view>
+    <!-- 个人信息 -->
+  <view class="top">
+    <view class="user-info">
+        <!-- 头像 -->
+        <view class="user-photo" bindtap="getUserProfile">
+          <image wx:if="{{!hasUserInfo}}" src=".././../assets/images/me/login.png"></image>
+          <image wx:else src="{{avatarUrl}}"></image>
+        </view>
+        <!-- 用户名 -->
+        <view class="user-name">
+            <text wx:if="{{!hasUserInfo}}">未登录</text>
+            <text wx:else>{{nickName}}</text>
+        </view>
+    </view>
+    <!-- 内容分类 -->
+    <view class="user-detail">
+        <view class="tpye">
+            <view class="type-name">帖子</view>
+            <view class="type-num">0</view>
+        </view>
+        <view class="tpye">
+            <view class="type-name">收藏</view>
+            <view class="type-num">0</view>
+        </view>
+        <view class="tpye">
+            <view class="type-name">消息</view>
+            <view class="type-num">0</view>
+        </view>
+        <view class="tpye">
+            <view class="type-name">积分</view>
+            <view class="type-num">0</view>
+        </view>
+    </view>
+  </view>
+  
+  <!-- 底部信息栏 -->
+  <view class="bottom">
+    <view class="bottom-content">
+        <view class="me-about">
+            <text>我的信息</text>
+            <image src="../../assets/images/me/next.png"></image>
+        </view>
+        <view class="me-about">
+            <text>分享一下</text>
+            <image src="../../assets/images/me/next.png"></image>
+        </view>
+        <view class="me-about">
+            <button open-type="feedback">反馈建议</button>
+            <image src="../../assets/images/me/next.png"></image>
+        </view>
+        <view class="me-about">
+            <text>关于我们</text>
+            <image src="../../assets/images/me/next.png"></image>
+        </view>
+        <view wx:if="{{hasUserInfo}}" class="me-about" bindtap="logout">
+            <text>退出登录</text>
+            <image src="../../assets/images/me/next.png"></image>
+        </view>
+    </view>
+  </view>
+</view>
+

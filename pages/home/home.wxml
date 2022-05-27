@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<view>
+    <!-- 轮播图 -->
+    <view class="swiper-container">
+        <swiper class="swiper" autoplay="true" circular="true" 
+            interval="3000" easing-function="easeOutCubic" 
+            current="{{swiperCurrent}}" 
+            bindchange="swiperChange">
+            <!-- 轮播图图片 -->
+            <swiper-item class="swiper-item" wx:for="{{rotationList}}" wx:key="index">
+            <!-- 加上widthFix可以使图片自适应 -->
+            <image src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <!-- 定制轮播图dots -->
+        <view class="dots">
+            <block wx:for="{{rotationList.length}}" wx:key="index">
+            <view class="dots-item{{index == swiperCurrent ? ' dot-active' : ''}}"></view>
+            </block>
+        </view>
+    </view>
+
+    <!-- 分类标签 -->
+    <view class="sort-nav-item" wx:for="{{sortList}}"  wx:key="index" bindtap="itemClick">
+        <image class="sort-nav-icon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
+        <text class="sort-nav-text">{{item.text}}</text>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+

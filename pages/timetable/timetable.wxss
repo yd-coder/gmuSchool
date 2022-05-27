@@ -1,0 +1,58 @@
+/* pages/timetable/timetable.wxss */
+
+/* 顶部星期 */
+.top {
+	padding-left: 88rpx;
+	height: 56rpx;
+	display: flex;
+	align-items: center;
+	background: #F5F7FA;
+}
+
+.top-text {
+width: 110rpx;
+height: 35rpx;
+font-size: 25rpx;
+text-align: center;
+}
+
+
+/* 滚动 */
+.scroll {
+	height: 100vh;
+  z-index: 101;
+  position: fixed;
+}
+
+/* 课表项 */
+.flex-item {
+  width: 98rpx;
+}
+
+.course-item {
+  position: absolute;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.smalltext {
+  font-size: 24rpx;
+	color: #fff;
+	text-align: center;
+}
+
+/* 左边课程节数时间 */
+.left {
+	display: flex;
+	flex-direction: column;
+	background-color:#F5F7FA;
+  width: 76rpx;
+  height: 150rpx;
+	font-size: 9pt;
+	text-align: center;
+}
+.left text {
+	margin-top: 10rpx;
+}

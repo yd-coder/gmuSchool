@@ -1,0 +1,210 @@
+/* pages/article.wxss */
+
+/* 顶部搜索发布 */
+.top {
+  position: relative;
+  margin-top: 20rpx;
+}
+input {
+  background:white;
+  width: 520rpx;
+  height: 60rpx;
+  padding: 6rpx 30rpx 6rpx 35rpx;
+  margin-left: 30rpx;
+  outline: 0;
+  border: 4rpx solid #CCCCCC;
+  border-radius: 45rpx;
+  font-size: 32rpx
+}
+.search {
+  position: absolute;
+  right: 160rpx;
+  top: 15rpx;
+  z-index: 99;
+}
+.search image {
+  height: 48rpx;
+  width: 48rpx;
+}
+.publish {
+  position: absolute;
+  top: 4rpx;
+  right: 28rpx;
+  text-align: center;
+}
+.publish image{
+  height: 70rpx;
+  width: 70rpx;
+}
+
+/* 帖子列表 */
+.message {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+  padding: 20rpx 20rpx 40rpx;
+}
+
+.face-img {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.left {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.face-img {
+  border-radius: 15rpx;
+}
+
+.nickname {
+  color: #586b94;
+  font-size: 34rpx;
+  font-weight: 550;
+  margin-bottom: 15rpx;
+}
+
+.type-time-delete {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  margin: 10rpx 0rpx;
+}
+
+.type {
+  color: #586b94;
+  font-weight: 800;
+}
+
+.time {
+  flex : 1;
+  color: #7f7f7f;
+  text-align: right;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  color: #586b94;
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-top: 10rpx;
+}
+
+.delete {
+  color: #586b94;
+  margin-left: 15rpx;
+}
+
+.hudong-img {
+  height: 40rpx;
+  margin-right: 10rpx;
+  width: 40rpx;
+}
+
+.hudong-box {
+  color: #7f7f7f;
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0rpx 10rpx -22rpx;
+}
+
+
+.hudong-cell {
+  display: flex;
+  align-items: center;
+}
+
+.images-wrap {
+  margin-top: 10rpx;
+  width: 580rpx;
+}
+
+.image-1 {
+  height: 400rpx;
+  width: 520rpx;
+}
+
+.image-2-3 {
+  height: 280rpx;
+  margin-right: 10rpx;
+  width: 280rpx;
+}
+
+.image-4 {
+  height: 250rpx;
+  margin-right: 10rpx;
+  width: 250rpx;
+}
+
+.image-5-9 {
+  height: 180rpx;
+  margin-right: 6rpx;
+  width: 180rpx;
+}
+
+.prize-box {
+  align-items: center;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ededed;
+  color: #586b94;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+
+.prize-img {
+  height: 30rpx;
+  margin-right: 10rpx;
+  width: 30rpx;
+}
+
+.comment-box {
+  background-color: #f7f7f7;
+  font-size: 30rpx;
+  padding: 20rpx;
+}
+
+.comment {
+  margin-bottom: 20rpx;
+}
+
+.comment-nickname {
+  color: #586b94;
+}
+
+.cemera-box {
+  margin: 15rpx 20rpx 0rpx 0rpx;
+  text-align: right;
+}
+
+.cemera-img {
+  height: 65rpx;
+  width: 65rpx;
+}
+
+.share-button {
+  background-color: #fff;
+  margin: 0;
+}
+
+.share-text {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+/* 回到顶部 */
+.backTop {
+  position: fixed;
+  bottom: 15rpx;
+  right: 15rpx;
+}
+.backTop image {
+  height: 120rpx;
+  width: 120rpx;
+}

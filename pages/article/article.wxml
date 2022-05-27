@@ -1,0 +1,91 @@
+<!--pages/article.wxml-->
+<view>
+  <!-- 顶部搜索发布 -->
+  <view class="top">
+    <input type="text" placeholder="搜索" bindinput="getInputValue" bindconfirm="goSearch" />
+    <view class="search" bindtap="goSearch">
+      <image src="../../assets/images/article/search.png" ></image>
+    </view>
+    <view class="publish" bindtap="goPublish" wx:if="{{isPublish}}">
+      <image src="../../assets/images/article/publish.png"></image>
+    </view>
+  </view>
+
+  <!-- 帖子列表 -->
+  <view class="message" wx:if="{{articles}}" wx:for="{{articles}}" wx:for-index="numm" wx:key="index">
+    <!-- 左边用户头像 -->
+    <view bindtap="toUserDetail" class="left" data-openid="{{item._openid}}">
+        <image class="face-img" src="{{item.headImg}}"></image>
+    </view>
+    <!-- 右边用户昵称，发布信息 -->
+    <view class="right">
+        <view bindtap="toUserDetail" class="nickname" data-openid="{{item._openid}}">{{item.userName}}</view>
+        <view bindtap="toDetail" data-id="{{item._id}}">{{item.text}}</view>
+        <view class="images-wrap">
+            <image bindtap="previewImg" class="image-1" data-index="{{numm}}" data-src="{{imgItem}}" src="{{imgItem}}" wx:if="{{item.images.length==1}}" wx:for="{{item.images}}" wx:for-index="indexx" wx:for-item="imgItem" wx:key="index"></image>
+            <image bindtap="previewImg" class="image-2-3" data-index="{{numm}}" data-src="{{imgItem}}" src="{{imgItem}}" wx:if="{{item.images.length==2}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:key="index"></image>
+            <image bindtap="previewImg" class="image-4" data-index="{{numm}}" data-src="{{imgItem}}" src="{{imgItem}}" wx:if="{{item.images.length==3}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:key="index"></image>
+            <image bindtap="previewImg" class="image-5-9" data-index="{{numm}}" data-src="{{imgItem}}" src="{{imgItem}}" wx:if="{{item.images.length>3}}" wx:for="{{item.images}}" wx:for-item="imgItem" wx:key="index"></image>
+        </view>
+        <video src="{{item.video}}" wx:if="{{item.video}}"></video>
+        <!-- 帖子类型-发帖时间-删除按钮 -->
+        <view class="type-time-delete">
+            <view class="type">{{item.type}}</view>
+            <view class="time">{{item.time}}</view>
+            <view catchtap="deleteArticle" class="delete" data-id="{{item._id}}" wx:if="{{openid==item._openid}}">删除</view>
+        </view>
+        <!-- 地理位置 -->
+        <view class="location">{{item.location}}</view>
+        <!-- 分享-评论-点赞按钮 -->
+        <view class="hudong-box">
+            <button class="share-button" data-index="{{numm}}" openType="share" size="mini">
+                <view class="hudong-cell">
+                    <image class="hudong-img" src="../../assets/images/article/share.png" style="width: 36rpx; height: 34rpx;"></image>
+                    <view class="share-text">分享</view>
+                </view>
+            </button>
+            <view bindtap="toDetail" class="hudong-cell" data-id="{{item._id}}">
+                <image class="hudong-img" src="../../assets/images/article/comment.png"></image>
+                <view>{{item.commentList.length>0?item.commentList.length:'评论'}}</view>
+            </view>
+            <view catchtap="prizeAction" class="hudong-cell" data-id="{{item._id}}">
+                <image class="hudong-img" src="{{util.isPrize(item.prizeList,openid)?'../../assets/images/article/prizeYes.png':'../../assets/images/article/prizeNo.png'}}"></image>
+                <!-- 类似于vue的计算属性，目前不支持es6及以上和小程序语法，官方几年未解决 -->
+                <wxs module="util">
+                  var isPrize=function(prizeList,openid){
+                    for(var i =0; i<prizeList.length; i++){
+                      if(prizeList[i].openid === openid){return true}
+                    }
+                  }  
+                  module.exports = {
+                    isPrize:isPrize
+                  }
+                </wxs>
+                <view>{{item.prizeList.length>0?item.prizeList.length:'点赞'}}</view>
+            </view>
+        </view>
+        <!-- 帖子点赞用户详情 -->
+        <view class="prize-box" wx:if="{{item.prizeList.length > 0}}">
+            <image class="prize-img" src="../../assets/images/article/prizeList.png"></image>
+            <view wx:for="{{item.prizeList}}" wx:for-index="nickIndex" wx:for-item="nickItem" wx:key="index">{{nickItem.nickName}} <text wx:if="{{nickIndex<item.prizeList.length-1}}">,</text>
+            </view>
+        </view>
+        <!-- 帖子评论详情 -->
+        <view class="comment-box" wx:if="{{item.commentList.length>0}}">
+            <view bindlongtap="{{openid==item._openid?'deleteComment':''}}" class="comment" data-id="{{item._id}}" data-index="{{comIndex}}" wx:for="{{item.commentList}}" wx:for-index="comIndex" wx:for-item="comItem" wx:key="index">
+                <text class="comment-nickname">{{comItem.nickName}}<text wx:if="{{!comItem.toOpenid}}">：</text>
+                </text>
+                <block wx:if="{{comItem.toOpenid}}">
+                    <text>回复</text>
+                    <text class="comment-nickname">{{comItem.toNickname}}：</text>
+                </block>
+                <text>{{comItem.text}}</text>
+            </view>
+        </view>
+    </view>
+  </view>
+
+  <!-- 回到顶部按钮 -->
+  <view class="backTop" wx:if="{{isBackTop}}" catchtap="backTop"><image src="../../assets/images/article/backTop.png"></image></view>
+
+</view>

@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/timetable/timetable",
+    "pages/me/me",
+    "pages/article/article",
+    "pages/publish/publish"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#42bd56"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "selectedColor": "#42bd56",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/images/tabbar/index.png",
+        "selectedIconPath": "assets/images/tabbar/index-active.png"
+      },
+      {
+        "pagePath": "pages/timetable/timetable",
+        "text": "课表",
+        "iconPath": "assets/images/tabbar/timetable.png",
+        "selectedIconPath": "assets/images/tabbar/timetable-active.png"
+      },
+      {
+        "pagePath": "pages/article/article",
+        "text": "圈子",
+        "iconPath": "assets/images/tabbar/circle.png",
+        "selectedIconPath": "assets/images/tabbar/circle-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "assets/images/tabbar/me.png",
+        "selectedIconPath": "assets/images/tabbar/me-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

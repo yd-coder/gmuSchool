@@ -1,0 +1,6 @@
+{
+  "usingComponents": {} ,
+  "navigationBarTitleText": "圈子",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}
