@@ -29,4 +29,7 @@
 ### 我的截图
 ![image](https://user-images.githubusercontent.com/73770046/178128788-4307fa3f-a6cc-496c-bb1b-ab858f3ddce8.png)
 
-
+### 云开发数据库articles表字段
+![image](https://user-images.githubusercontent.com/73770046/178136082-1de65672-22e2-42a9-815e-fd880f338e75.png)
+### 云开发数据库courses表字段
+![image](https://user-images.githubusercontent.com/73770046/178136100-9450117a-b33d-4c0f-adb1-d22dd7ef45bc.png)
